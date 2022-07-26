@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+// Timer
+var timer;
+var timeStart = new Date("November 18, 2021 7:59:59");
+var compareDate = new Date("July 26, 2022 12:00:00");
+var nn = new Date();
+
+if (timeStart < nn.getTime()) {
+console.log("timer start");
+timer = setInterval(function () {
+timeBetweenDates(compareDate);
+}, 1000);
+}
+
+function timeBetweenDates(toDate) {
+var dateEntered = toDate;
+var now = new Date();
+var difference = dateEntered.getTime() - now.getTime();
+
+if (difference <= 0) {
+var seconds = 0;
+var minutes = 0;
+var hours = 0;
+var days = 0;
+
+$("#days").text(days);
+$("#hours").text(hours);
+$("#minutes").text(minutes);
+$("#seconds").text(seconds);
+} else {
+var seconds = Math.floor(difference / 1000);
+var minutes = Math.floor(seconds / 60);
+var hours = Math.floor(minutes / 60);
+var days = Math.floor(hours / 24);
+
+hours %= 24;
+minutes %= 60;
+seconds %= 60;
+
+$("#days").text(days);
+$("#hours").text(hours);
+$("#minutes").text(minutes);
+$("#seconds").text(seconds);
+}
+}
+// Timer END
+</script>
+</head>
+<body>
+<div class="box resetcss box_custom" id="box_custom36">
+<div class="odliczanie-all">
+<div class="odliczanie">
+<p>Odliczamy do <strong>pierwszego DROPa</strong></p>
+</div>
+<div class="bf_pasek">
+<div id="timer">
+<div><span id="days">0</span>dni</div>
+<div><span id="hours">0</span>godz</div>
+<div><span id="minutes">0</span>min</div>
+<div><span id="seconds">0</span>sek</div>
+</div>
+</div>
+</div>
+                    
+                    
+                    
+                                        </div>
+                                        </body>
+                                        </html>
